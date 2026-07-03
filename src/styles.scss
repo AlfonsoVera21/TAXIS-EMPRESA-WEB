@@ -1,0 +1,274 @@
+@use "tailwindcss";
+@import "primeicons/primeicons.css";
+
+:root {
+  --brand: #ba0029;
+  --brand-dark: #410008;
+  --brand-hover: #92001e;
+  --brand-container: #e31d3b;
+  --brand-soft: #ffdad9;
+  --brand-soft-dim: #ffb3b2;
+  --success: #047481;
+  --success-bg: #e6fffa;
+  --warning: #9c4221;
+  --warning-bg: #fffaf0;
+  --danger: #ba1a1a;
+  --danger-bg: #ffdad6;
+  --ink: #181c20;
+  --muted: #5d3f3f;
+  --border: #e6bdbb;
+  --outline: #916f6e;
+  --surface: #ffffff;
+  --page: #f7f9ff;
+  --surface-low: #f1f4f9;
+  --surface-container: #ebeef3;
+  --surface-high: #e5e8ee;
+  --surface-highest: #e0e3e8;
+  --surface-dim: #d7dadf;
+  --font-heading: "IBM Plex Sans", Inter, Arial, sans-serif;
+  --font-sans: Inter, Arial, sans-serif;
+  --p-primary-color: var(--brand);
+  --p-primary-hover-color: var(--brand-hover);
+  --p-primary-active-color: var(--brand-dark);
+  --p-primary-contrast-color: #ffffff;
+  --p-focus-ring-color: rgb(186 0 41 / 0.22);
+  --p-form-field-focus-border-color: var(--brand);
+  --p-form-field-border-color: var(--border);
+  --p-content-border-color: var(--border);
+  --p-surface-0: #ffffff;
+  --p-surface-50: var(--page);
+  --p-surface-100: var(--surface-low);
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-container: var(--brand-container);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-soft-dim: var(--brand-soft-dim);
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-danger: var(--danger);
+  --color-danger-bg: var(--danger-bg);
+  --color-error-container: var(--danger-bg);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-outline: var(--outline);
+  --color-surface: var(--surface);
+  --color-surface-low: var(--surface-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-high: var(--surface-high);
+  --color-surface-highest: var(--surface-highest);
+  --color-surface-dim: var(--surface-dim);
+  --color-page: var(--page);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.app-card {
+  border: 1px solid rgb(230 189 187 / 0.78);
+  border-radius: 0.5rem;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.app-card:hover {
+  border-color: rgb(186 0 41 / 0.32);
+}
+
+.control {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid rgb(230 189 187 / 0.95);
+  border-radius: 0.5rem;
+  background: var(--surface-low);
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--ink);
+  outline: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.control:focus {
+  border-color: var(--brand);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgb(186 0 41 / 0.14);
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--muted);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+
+.arca-nav-active {
+  border-left-color: var(--brand) !important;
+  background: rgb(227 29 59 / 0.1) !important;
+  color: var(--brand) !important;
+  font-weight: 700 !important;
+}
+
+.arca-nav-active .material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+.table-shell .p-datatable-thead > tr > th {
+  background: var(--surface-low);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.table-shell .p-datatable-tbody > tr > td {
+  font-size: 0.875rem;
+}
+
+.table-shell .p-datatable-tbody > tr {
+  transition: background-color 0.18s ease;
+}
+
+.table-shell .p-datatable-tbody > tr:hover > td {
+  background: var(--surface-low);
+}
+
+.table-shell .p-datatable-tbody > tr > td,
+.table-shell .p-datatable-thead > tr > th {
+  border-color: var(--border);
+}
+
+.p-button {
+  border-radius: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.p-button:not(.p-button-secondary):not(.p-button-success):not(.p-button-danger):not(.p-button-text):not(.p-button-outlined) {
+  border-color: var(--brand) !important;
+  background: var(--brand) !important;
+  color: #ffffff !important;
+}
+
+.p-button:not(.p-button-secondary):not(.p-button-success):not(.p-button-danger):not(.p-button-text):not(.p-button-outlined):hover {
+  border-color: var(--brand-hover) !important;
+  background: var(--brand-hover) !important;
+}
+
+.p-button.p-button-secondary {
+  border-color: var(--border) !important;
+  background: #ffffff !important;
+  color: var(--muted) !important;
+}
+
+.p-button.p-button-secondary:hover {
+  background: var(--surface-low) !important;
+  color: var(--brand) !important;
+}
+
+.p-button.p-button-success {
+  border-color: var(--success) !important;
+  background: var(--success) !important;
+  color: #ffffff !important;
+}
+
+.p-button.p-button-danger {
+  border-color: var(--danger) !important;
+  background: var(--danger) !important;
+  color: #ffffff !important;
+}
+
+.p-dialog,
+.p-popover,
+.p-overlay {
+  border-color: var(--border);
+}
+
+.p-button.p-button-sm {
+  font-size: 0.8rem;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-low);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #ced4da;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+  }
+}
